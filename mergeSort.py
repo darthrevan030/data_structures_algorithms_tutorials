@@ -63,6 +63,22 @@ def mergeAscending(left, right):
     return newList
 
 
+def mergeSortAD(list, sort: bool):
+    sortType = sort
+    if sortType == True:
+        result = mergeSortAscending(list)
+        return result
+    elif sortType == False:
+        result = mergeSortDescending(list)
+        return result
+    else:
+        print("Please Input either 1 for Ascending Sort or 0 for Descending Sort")
+
+
 l = [1 , 6, 32, 5, 12, 553, 132221, 33, 2, 4]
 print(mergeSortDescending(l))
 print(mergeSortAscending(l))
+
+print(mergeSortAD(l, True))
+print(mergeSortAD(l, False))
+
