@@ -79,11 +79,31 @@ class Linked_List:
             else: 
                 prev = current
                 current = current.next
-                
+
         return current
-    
+
     def removeNodeByIndex(self, index):
-        return
+        current = self.head
+        prev = None
+        found = False
+        position = index
+
+        if index == 0:
+            found = True
+            self.head = current.next
+            return current
+        
+        while position > 1:
+            current = current.next
+            position -= 1
+        
+        prev = current
+        current = current.next
+        nextNode = current.next
+
+        prev.next = nextNode
+
+        return current
 
 
 
@@ -125,4 +145,10 @@ print(ll.findNodeData(55))
 print(ll.findNodeData(45))
 
 ll.removeNodeByKey(55)
+print(ll)
+
+ll.removeNodeByIndex(3)
+print(ll)
+
+ll.removeNodeByIndex(0)
 print(ll)
